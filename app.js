@@ -1,12 +1,30 @@
-function CarregarFilmes(){
-    //array --> variável com subdivisões (indices)
+//array --> variável com subdivisões (indices)
 
-    let filmes = ["images/chegada.png" , "images/yesterday.png" , "images/escola.png" , "images/alladin.jpg" , "images/marvel.jpg" , "images/avatar.jpg"]
+let filmes = [
+    "images/chegada.png" , 
+    "images/yesterday.png" , 
+    "images/escola.png" , 
+]
 
+//refatoração --> mlhorar um código existente.
+
+function CarregarFilmes(){  
+    let totalFilmes = filmes.length
+    let divListaFilmes = document.querySelector(".lista-filmes")
+
+    divListaFilmes.innerHTML = ""
     //laço de repetição
-    for(let controle = 0 ; controle < 6 ; controle = controle + 1){
-        document.querySelector(".lista-filmes").innerHTML += "<img src="+ filmes [controle] + ">"
-    }
+    for(let i = 0 ; i < totalFilmes ; i++){
+       divListaFilmes.innerHTML += "<img src="+ filmes [i] + ">"
+    }    
+}
 
-    
+function AdicionarFilme(){
+    let nomeFilme = document.querySelector("#nome-do-filme").value
+    let caminhoCompleto = "images/" + nomeFilme
+
+    filmes.push(caminhoCompleto)
+
+
+    CarregarFilmes()
 }

@@ -22,7 +22,7 @@
 .container img{
     height: 250px;
     width: 250px;
-    object-fit: cover;
+    object-fit: fill;
     margin: 5px;
 }
 
